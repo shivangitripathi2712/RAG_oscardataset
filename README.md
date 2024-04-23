@@ -1,9 +1,9 @@
 # Oscars 2023 Query and Chat System (Retrieval augmented generation)
 
 ## Project Description
-In this project, the Retriever-Augmented Generation (RAG) process is utilized to enhance the text-based query system with the aim of answering questions about the 2023 Oscars ceremony. RAG works by employing a two-step approach: firstly, the "retriever" component uses a sentence transformer model to convert the input query text into a dense vector, or embedding. These embeddings effectively capture the semantic essence of the text. This embedding is then used to search a ChromaDB database collection, which retrieves a set of documents that are contextually relevant to the query. The documents returned by ChromaDB act as an augmented knowledge base for the second step of the process.
+In this project, the Retriever-Augmented Generation (RAG) process is utilized to enhance the text-based query system to answer questions about the 2023 Oscars ceremony. RAG works by employing a two-step approach: firstly, the "retriever" component uses a sentence transformer model to convert the input query text into a dense vector, or embedding. These embeddings effectively capture the semantic essence of the text. This embedding is then used to search a ChromaDB database collection, which retrieves a set of documents that are contextually relevant to the query. The documents returned by ChromaDB act as an augmented knowledge base for the second step of the process.
 
-The "generator" component then takes over, which in this case, is the LLAMA 2 model, a potent language model adept at generating contextually rich text. The LLAMA 2 model receives the query along with the relevant documents retrieved by the ChromaDB as input. Using this combined information, the LLAMA 2 model generates an answer by synthesizing the information from the retrieved documents with the query context, producing a coherent and contextually relevant response. This integrated approach ensures that the answers provided by the chat interface are not just based on the LLAMA 2 model's pre-trained knowledge but are also informed by the specific details contained within the documents relevant to the Oscars 2023. The result is an enriched and accurate response that leverages both the depth of the retrieved documents and the generative capabilities of the LLAMA 2 model.
+The "generator" component then takes over, which in this case, is the LLAMA 2 model, an open-source language model adept at generating contextually rich text. The LLAMA 2 model receives the query along with the relevant documents retrieved by the ChromaDB as input. Using this combined information, the LLAMA 2 model generates an answer by synthesizing the information from the retrieved documents with the query context, producing a coherent and contextually relevant response. This integrated approach ensures that the answers provided by the chat interface are not just based on the LLAMA 2 model's pre-trained knowledge but are also informed by the specific details contained within the documents relevant to the Oscars 2023. The result is an accurate response that leverages both the depth of the retrieved documents and the generative capabilities of the LLAMA 2 model.
 ## How to Clone and Deploy
 
 ### Prerequisites
@@ -20,6 +20,7 @@ pip install chromadb, sentence-transformers,  pandas, numpy, huggingface_hub, op
 
 ### Usage
 To use the system, run the provided scripts after making sure you have the `oscars.csv` data file in the `/content` directory (check your respective directory)
+This code has been built from scratch 
 
 
 ## Functionality
@@ -32,4 +33,3 @@ To use the system, run the provided scripts after making sure you have the `osca
 ### What Does Not
 - The code assumes the presence of a service running at the given URI, which may not be publicly accessible.
 - Real-time updating of the Oscars database with new entries is not implemented.
-- The chat system is a standalone function and is not integrated into a web or GUI interface.
